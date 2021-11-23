@@ -1,0 +1,23 @@
+﻿@using Shop.Models
+@model IEnumerable<Product>
+
+<div class="col-md-10">
+    <div class="row">
+        @foreach (Product prod in Model)
+        {
+            <div class="col-sm-4">
+                <form class="product" asp-controller="Cart" asp-action="AddToCart">
+                    <div class="product-img">
+                        <img src="@prod.ImagePath" alt="">
+                    </div>
+                    <p class="product-title">
+                        <a href="#">@prod.Name</a>
+                    </p>
+                    <p class="product-price">Price: $@prod.Price</p>
+                    <input type="hidden" name="prodId" value="@prod.Id"/>
+                    <input class="btn-block" type="submit" value="TiK"/>
+                </form>
+            </div>
+        }
+    </div>
+</div>

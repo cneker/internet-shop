@@ -1,0 +1,10 @@
+﻿@model Shop.Models.LoginModel
+
+<div>
+    <form method="post" asp-action="Authorize" asp-controller="Authorization" asp-antiforgery="true">
+        Email: <input type="text" asp-for="Email"/><br/>
+        Password: <input type="text" asp-for="Password"/><br/>
+        <input type="submit" value="LogIn"/>
+    </form>
+    <a asp-controller="Authorization" asp-action="Registration">Registration</a>
+</div>

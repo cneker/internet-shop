@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Shop.Models
+@inject SignInManager<UserModel> SignInManager
+@inject UserManager<UserModel> UserManager
+
+
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("admin"))
+    {
+        <li class="nav-item">
+            <a asp-controller="Roles" asp-action="UserList" class="nav-link text-dark" title="Manage">Role manage</a>
+        </li>
+    }
